@@ -1,0 +1,40 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env*/
+.venv/
+
+# Hugging Face/transformers cache
+.cache/
+transformers_cache/
+
+# OS/IDE files
+.DS_Store
+.idea/
+.vscode/
+
+# Egg/distribution files
+*.egg
+*.egg-info/
+build/
+dist/
+
+# Environment variable configs, secrets
+*.env
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Test outputs and coverage
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+*.cover
+*.pyc
