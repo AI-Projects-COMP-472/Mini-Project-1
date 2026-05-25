@@ -1,0 +1,35 @@
+# To be formatted in pdf later on
+
+Team members:
+
+Noemie Corneillier 40284815
+Kaoutar Machouat
+Yijia Xu
+
+Contribution:
+
+Noemie Corneillier:
+
+Kaoutar Machouat:
+
+Yijia Xu:
+
+Difficulties faced:
+
+# Brief list of difficulties faced and how you overcome them
+-
+-
+-
+...
+
+Actual Development Time Per Component
+
+- Knowledge Base Loading:
+
+- Semantic Search:
+
+- Sentiment Analysis:
+
+- Escalation Logic:
+
+- Interactive Conversation Loop:

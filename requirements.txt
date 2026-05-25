@@ -1,0 +1,8 @@
+
+numpy 
+pandas
+sentence-transformers
+scikit-learn
+transformers
+torch
+#pyqt5
