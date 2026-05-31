@@ -1,1 +1,0 @@
-#Terminal interface entry point
