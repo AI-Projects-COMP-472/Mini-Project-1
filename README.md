@@ -17,7 +17,7 @@ This project is an AI-powered student support assistant for COMP 472. It answers
 ## Project structure
 
 ```text
-comp472_student_support_ai/
+Mini-Project-1/
 ├── assistant/
 │   ├── __init__.py
 │   ├── config.py
@@ -28,7 +28,9 @@ comp472_student_support_ai/
 │   ├── sentiment.py
 │   └── support_assistant.py
 ├── tests/
+│   ├── test_config.py
 │   ├── test_conversation.py
+│   ├── test_escalation.py
 │   ├── test_knowledge_base.py
 │   ├── test_semantic_search.py
 │   └── test_sentiment.py
