@@ -12,6 +12,7 @@ This project is an AI-powered student support assistant for COMP 472. It answers
 - Displays sentiment label and confidence score for every message
 - Recommends human escalation for strongly negative messages
 - Maintains basic conversation history and session statistics
+- Uses project-root-relative path resolution for `data/knowledge_base.csv`, so CLI and GUI do not depend on the current working directory
 - Class-based structure that can be reused later in a GUI
 
 ## Project structure
@@ -90,6 +91,8 @@ Run it from the project folder:
 ```bash
 python gui/app.py
 ```
+
+Because the GUI and CLI now resolve the knowledge base path from the project root, they are more robust to different working directories.
 
 The first launch may take a moment while the embedding and sentiment models load.
 
