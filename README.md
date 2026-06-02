@@ -28,11 +28,9 @@ Mini-Project-1/
 │   ├── sentiment.py
 │   └── support_assistant.py
 ├── tests/
-│   ├── __init__.py
 │   ├── test_config.py
 │   ├── test_conversation.py
 │   ├── test_escalation.py
-│   ├── test_gui.py
 │   ├── test_knowledge_base.py
 │   ├── test_semantic_search.py
 │   └── test_sentiment.py
