@@ -12,13 +12,12 @@ This project is an AI-powered student support assistant for COMP 472. It answers
 - Displays sentiment label and confidence score for every message
 - Recommends human escalation for strongly negative messages
 - Maintains basic conversation history and session statistics
-- Uses project-root-relative path resolution for `data/knowledge_base.csv`, so CLI and GUI do not depend on the current working directory
 - Class-based structure that can be reused later in a GUI
 
 ## Project structure
 
 ```text
-comp472_student_support_ai/
+Mini-Project-1/
 ├── assistant/
 │   ├── __init__.py
 │   ├── config.py
@@ -29,7 +28,11 @@ comp472_student_support_ai/
 │   ├── sentiment.py
 │   └── support_assistant.py
 ├── tests/
+│   ├── __init__.py
+│   ├── test_config.py
 │   ├── test_conversation.py
+│   ├── test_escalation.py
+│   ├── test_gui.py
 │   ├── test_knowledge_base.py
 │   ├── test_semantic_search.py
 │   └── test_sentiment.py
@@ -91,8 +94,6 @@ Run it from the project folder:
 ```bash
 python gui/app.py
 ```
-
-Because the GUI and CLI now resolve the knowledge base path from the project root, they are more robust to different working directories.
 
 The first launch may take a moment while the embedding and sentiment models load.
 
