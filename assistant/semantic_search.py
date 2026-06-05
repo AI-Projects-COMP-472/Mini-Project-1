@@ -1,4 +1,11 @@
-"""Semantic search using sentence embeddings and cosine similarity."""
+"""Semantic search using sentence embeddings and cosine similarity.
+
+Goal:
+- Embed all knowledge-base questions once
+- Embed each user message at runtime
+- Use cosine similarity to retrieve the closest Q&A pairs
+
+"""
 
 from __future__ import annotations
 
@@ -21,10 +28,16 @@ class SemanticSearch:
         embedding_model=None,
         question_embeddings: np.ndarray | None = None,
     ) -> None:
+        
+        # Store knowledge-base data andthresholds
         self.questions = questions
         self.answers = answers
         self.similarity_threshold = similarity_threshold
+
+        # Load embedding model or accept an injected one for tests
         self.embedding_model = embedding_model or self.load_embedding_model(model_name)
+        
+        # Pre-compute question embeddings once or accept precomputed embeddings
         self.question_embeddings = (
             np.asarray(question_embeddings)
             if question_embeddings is not None
@@ -49,7 +62,7 @@ class SemanticSearch:
 
     def generate_embeddings(self, texts: List[str]) -> np.ndarray:
         """
-        Convert text into embeddings.
+        Convert text into embedding vectors.
 
         Embeddings are arrays of numbers that represent the meaning of text.
         Questions with similar meaning should have similar embeddings.
@@ -64,12 +77,17 @@ class SemanticSearch:
         Returns:
             A tuple containing the selected answer, matched question, and similarity score.
         """
+        # Embed the incoming message
         message_embedding = self.generate_embeddings([message])
 
+        # Compute cosine similarity against all stored question embeddings
         similarities = cosine_similarity(message_embedding, self.question_embeddings)[0]
+        
+        # Pick the best matching question
         best_index = int(np.argmax(similarities))
         best_score = float(similarities[best_index])
 
+        # If confidence it too low, return a safe fallback response
         if best_score < self.similarity_threshold:
             fallback_answer = (
                 "I could not find a confident answer for that question. "
@@ -77,4 +95,5 @@ class SemanticSearch:
             )
             return fallback_answer, self.questions[best_index], best_score
 
+        # Return the associated answer + metadata for printing
         return self.answers[best_index], self.questions[best_index], best_score
