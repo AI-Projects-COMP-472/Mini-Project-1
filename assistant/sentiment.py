@@ -1,4 +1,8 @@
-"""Sentiment analysis for user messages."""
+"""Sentiment analysis for user messages.
+
+Wraps a Hugging Face sentiment pipeline and normalizes its output labels
+
+"""
 
 from __future__ import annotations
 
@@ -10,6 +14,7 @@ from transformers import pipeline
 class SentimentAnalyzer:
     """Detects positive, neutral, or negative sentiment from text."""
 
+    # Map model-specific labels -> RoBERTa outputs to project labels
     label_mapping = {
         "LABEL_0": "NEGATIVE",
         "LABEL_1": "NEUTRAL",
@@ -17,6 +22,8 @@ class SentimentAnalyzer:
     }
 
     def __init__(self, model_name: str, analyzer=None) -> None:
+        
+        # Allow dependency injection for testing, otherwise load the model
         self.analyzer = analyzer or self.load_sentiment_model(model_name)
 
     @staticmethod
@@ -40,6 +47,7 @@ class SentimentAnalyzer:
         """Normalize model labels into POSITIVE, NEUTRAL, or NEGATIVE."""
         normalized_label = cls.label_mapping.get(label.upper(), label.upper())
 
+        # Default to NEUTRAL if the label is unexpected
         if normalized_label not in {"POSITIVE", "NEUTRAL", "NEGATIVE"}:
             return "NEUTRAL"
 
