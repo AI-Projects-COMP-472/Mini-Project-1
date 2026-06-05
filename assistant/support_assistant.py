@@ -7,7 +7,6 @@ This module connects together the main assitant components:
 - Escalating policy -> rule-based
 - Conversation history + basic session stats
 
-
 """
 
 from __future__ import annotations
