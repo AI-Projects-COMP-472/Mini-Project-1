@@ -8,7 +8,7 @@ Yijia Xu 40324577
 
 Contribution:
 
-Noemie Corneillier:
+Noemie Corneillier: 
 
 Kaoutar Machouat:
 
@@ -17,10 +17,10 @@ Yijia Xu:
 Difficulties faced:
 
 # Brief list of difficulties faced and how you overcome them
--
--
--
-...
+- Understanding the core concepts and theory behind it 
+- Dividing tasks between teammates
+- Dealing with multiple versions of dependencies needed for the project
+- Problem occured with the GUI, which was challenging to test the program during development
 
 Actual Development Time Per Component
 
