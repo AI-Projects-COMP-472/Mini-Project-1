@@ -8,11 +8,13 @@ Yijia Xu 40324577
 
 Contribution:
 
-Noemie Corneillier: 
+Noemie Corneillier: Knowledge Base Loading and Data Validation, Unit Testing and Debugging
 
-Kaoutar Machouat:
+Kaoutar Machouat: Semantic Search Implementation and Conversation Loop
 
-Yijia Xu:
+Yijia Xu: Sentiment Analysis and Escalation Policy
+
+
 
 Difficulties faced:
 
