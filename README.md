@@ -37,11 +37,9 @@ Mini-Project-1/
 ├── gui/
 │   └── app.py
 ├── data/
-│   └── knowledge_base.csv
-│ 
+│   └── knowledge_base.csv 
 ├── images/README
-│   └── architecture-diagram.png
-│ 
+│   └── architecture-diagram.png 
 ├── main.py
 ├── short_reflection.txt
 ├── requirements.txt
