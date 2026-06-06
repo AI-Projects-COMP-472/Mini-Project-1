@@ -16,6 +16,7 @@ class FakeSentimentAnalyzer:
 
 
 def test_support_assistant_processes_message_and_updates_stats():
+    """Verify assistant processes messages, detects sentiment, escalates negatives, and updates stats."""
     config = AssistantConfig(
         knowledge_base_path=Path(__file__).resolve().parents[1] / "data" / "knowledge_base.csv"
     )
@@ -36,6 +37,7 @@ def test_support_assistant_processes_message_and_updates_stats():
 
 
 def test_support_assistant_rejects_empty_message():
+    """Verify assistant raises ValueError when user sends empty or whitespace-only messages."""
     config = AssistantConfig(
         knowledge_base_path=Path(__file__).resolve().parents[1] / "data" / "knowledge_base.csv"
     )

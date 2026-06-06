@@ -15,6 +15,7 @@ class FakeEmbeddingModel:
 
 
 def test_semantic_search_returns_best_answer():
+    """Verify semantic search finds the best matching answer when similarity is high."""
     search = SemanticSearch(
         questions=["How do I reset my password?", "Where is the registrar office?"],
         answers=["Reset it online.", "Visit the administration building."],
@@ -31,6 +32,7 @@ def test_semantic_search_returns_best_answer():
 
 
 def test_semantic_search_returns_fallback_when_confidence_is_low():
+    """Verify semantic search returns fallback message when similarity is below threshold."""
     search = SemanticSearch(
         questions=["How do I reset my password?"],
         answers=["Reset it online."],

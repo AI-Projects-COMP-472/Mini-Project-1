@@ -69,6 +69,23 @@ python main.py
 
 The first run may take longer because Hugging Face models need to download.
 
+## Architecture
+
+This diagram shows how the main components interact within the assistant:
+
+```mermaid
+graph TD
+    A["User Input"] -->|CLI or GUI| B["SupportAssistant"]
+    B -->|extract_message| C["SentimentAnalyzer"]
+    B -->|extract_message| D["SemanticSearch"]
+    C -->|sentiment_label<br/>sentiment_score| E["EscalationPolicy"]
+    D -->|answer<br/>matched_question<br/>similarity_score| E
+    E -->|should_escalate| F["AssistantResponse"]
+    F -->|display| G["Output<br/>CLI/GUI"]
+    H["KnowledgeBase<br/>CSV"] -->|load| D
+    H -->|load| B
+```
+
 ## How it works
 
 ### Embeddings
