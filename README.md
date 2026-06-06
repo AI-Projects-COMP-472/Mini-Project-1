@@ -73,7 +73,7 @@ The first run may take longer because Hugging Face models need to download.
 
 This diagram shows how the main components interact within the assistant:
 
-![1780754160273](images/README/1780754160273.png)
+![architecture-diagram](images/README/architecture-diagram.png)
 
 ## How it works
 
