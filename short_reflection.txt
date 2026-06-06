@@ -3,7 +3,7 @@
 Team members:
 
 Noemie Corneillier 40284815
-Kaoutar Machouat
+Kaoutar Machouat 40268038
 Yijia Xu 40324577
 
 Contribution:
@@ -19,19 +19,55 @@ Yijia Xu: Sentiment Analysis and Escalation Policy
 Difficulties faced:
 
 # Brief list of difficulties faced and how you overcome them
--
--
--
-...
+- Understanding the core concepts and theory behind it 
+- Dividing tasks between teammates
+- Dealing with multiple versions of dependencies needed for the project
+- Problem occured with the GUI, which was challenging to test the program during development
 
 Actual Development Time Per Component
 
-- Knowledge Base Loading:
+Our actual development time was close to the estimated timeline provided in the project instructions. We divided the work between understanding the AI concepts, setting up the environment, implementing the main features, testing, and improving the assistant.
 
-- Semantic Search:
+Knowledge Base Loading: 0.5 hour
 
-- Sentiment Analysis:
+We created the knowledge_base.csv file using the required question,answer format. We included the sample questions from the instructions and added more Concordia-related questions to make the assistant more useful. We also used pandas to load the CSV and added basic checks for missing files, empty data, or incorrect columns.
 
-- Escalation Logic:
+Understanding Embeddings: 1.5 hours
 
-- Interactive Conversation Loop:
+We spent time learning how sentence embeddings work and how they convert text into numerical vectors. This helped us understand how the assistant can compare the user’s question with the stored questions, even when the wording is different.
+
+Environment Setup: 0.5 hour
+
+We set up the Python environment in VS Code and installed the required libraries: transformers, sentence-transformers, scikit-learn, numpy, and pandas. We also created a requirements.txt file so the project can be installed easily on another computer.
+
+Getting Familiar with Python Coding: 0.5 hour
+
+We reviewed the Python concepts needed for the project, including file handling, functions, classes, error handling, and clean code organization. This helped us make the code easier to understand and explain during the demo.
+
+Semantic Search: 2.5 hours
+
+We used SentenceTransformer to generate embeddings for all questions in the knowledge base. Then, for each user question, the assistant generates a new embedding and compares it with the stored ones using cosine similarity. We also displayed a similarity score to make the result easier to understand and debug.
+
+Sentiment Analysis: 2.5 hours
+
+We used the Hugging Face transformers pipeline to detect the sentiment of each user message. The assistant displays the sentiment label and confidence score. We tested positive, neutral, and negative messages to make sure the output was working properly.
+
+Escalation Logic: 0.5 hour
+
+After sentiment analysis was working, we added the escalation rule. If the sentiment is negative and the confidence score is above 0.9, the assistant recommends contacting a human advisor. We tested this with frustrated messages related to tuition, account access, and support.
+
+Interactive Conversation Loop: 1 hour
+
+We built the command-line chatbot loop so the assistant can keep answering questions until the user types quit. We also added basic input validation so empty messages are ignored.
+
+Testing and Debugging: 2.5 hours
+
+We tested the full program several times to make sure the CSV loaded correctly, embeddings were generated, semantic search returned relevant answers, and sentiment analysis worked as expected. We also tested edge cases such as empty input, unrelated questions, and different ways of asking the same question.
+
+Extra Improvements: 1.5 hours
+
+We spent extra time improving the project beyond the minimum requirements. This included adding more Q&A pairs to the knowledge base, making the code cleaner, preparing it for a future GUI version, organizing the files for GitHub, and adding documentation.
+
+Having Fun: Unlimited
+
+This included experimenting with the assistant, testing more questions, thinking about GUI improvements, and making the project feel more complete and realistic.
