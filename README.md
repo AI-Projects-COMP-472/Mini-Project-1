@@ -38,6 +38,10 @@ Mini-Project-1/
 │   └── app.py
 ├── data/
 │   └── knowledge_base.csv
+│ 
+├── images/README
+│   └── architecture-diagram.png
+│ 
 ├── main.py
 ├── short_reflection.txt
 ├── requirements.txt
