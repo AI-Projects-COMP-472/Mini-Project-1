@@ -6,6 +6,7 @@ from assistant.knowledge_base import KnowledgeBase
 
 
 def test_knowledge_base_has_required_columns_and_rows():
+    """Verify knowledge base CSV has required columns, enough rows, and no null values."""
     path = Path(__file__).resolve().parents[1] / "data" / "knowledge_base.csv"
     data = KnowledgeBase.load(path)
 
@@ -17,6 +18,7 @@ def test_knowledge_base_has_required_columns_and_rows():
 
 
 def test_knowledge_base_rejects_missing_columns(tmp_path):
+    """Verify knowledge base loader raises error when required 'answer' column is missing."""
     path = tmp_path / "bad_knowledge_base.csv"
     pd.DataFrame({"question": ["How do I register?"]}).to_csv(path, index=False)
 

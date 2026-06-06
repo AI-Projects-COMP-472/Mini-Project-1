@@ -16,6 +16,7 @@ class DummySentimentAnalyzer:
 
 
 def test_default_knowledge_base_path_is_project_root_data_file():
+    """Verify default config uses project-root-relative path for knowledge base."""
     config = AssistantConfig()
 
     assert config.knowledge_base_path == PROJECT_ROOT / "data" / "knowledge_base.csv"
@@ -23,6 +24,7 @@ def test_default_knowledge_base_path_is_project_root_data_file():
 
 
 def test_support_assistant_loads_knowledge_base_even_when_cwd_changes(monkeypatch, tmp_path):
+    """Verify assistant works even when run from a different working directory."""
     monkeypatch.chdir(tmp_path)
 
     config = AssistantConfig()
