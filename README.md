@@ -41,7 +41,7 @@ Mini-Project-1/
 ├── images/README
 │   └── architecture-diagram.png 
 ├── main.py
-├── short_reflection.txt
+├── short_reflection.pdf
 ├── requirements.txt
 ├── README.md
 └── .gitignore
